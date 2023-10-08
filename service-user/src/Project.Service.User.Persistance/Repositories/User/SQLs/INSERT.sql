@@ -1,0 +1,22 @@
+﻿insert into Users
+(
+	[UserGuid],
+	[Email],
+	[Password], 
+	[FirstName], 
+    [LastName], 
+    [DateCreated], 
+    [DateUpdated]
+)
+output
+	INSERTED.*
+values
+(
+	@UserGuid,
+	@Email, 
+	@Password, 
+	@FirstName, 
+    @LastName,
+	GETDATE(),
+	GETDATE()
+)
